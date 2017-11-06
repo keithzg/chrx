@@ -382,7 +382,9 @@ determine_osv_ubuntu()
     vivid)  CHRX_OS_VERSION="15.04" ;;
     wily)   CHRX_OS_VERSION="15.10" ;;
     xenial) CHRX_OS_VERSION="16.04.2" ;;
-    zesty)  CHRX_OS_VERSION="16.10" ;;
+    yakkety)  CHRX_OS_VERSION="16.10" ;;
+    zesty)  CHRX_OS_VERSION="17.04" ;;
+    artful) CHRX_OS_VERSION="17.10" ;;
     dev)    get_os_version_and_core_url_dev_ubuntu $CHRX_OS_RELEASE ;;
     lts)    get_os_version_ubuntu $CHRX_OS_RELEASE ;;
     latest) get_os_version_ubuntu $CHRX_OS_RELEASE ;;
@@ -399,7 +401,7 @@ determine_osv_ubuntu()
     "14.04.*")
       msg_os_version="${ANSI_YEL}(CAUTION: not well-tested!)${ANSI_RST}"
       ;;
-    '14.10'|'15.04'|'15.10')
+    '14.10'|'15.04'|'15.10'|'16.10')
       msg_os_version="${ANSI_YEL}(ERROR: no longer available!)${ANSI_RST}"
       FAIL=1
       ;;
@@ -407,7 +409,8 @@ determine_osv_ubuntu()
       _ubuntu_corebase='core'
       ;;
     "16.04.*") ;;
-    '16.10') ;;
+    '17.04') ;;
+    '17.10') ;;
     *)
       if [ "`echo ${CHRX_OS_VERSION} | grep "^[0-9.][0-9.]*$"`" ]; then
         msg_os_version="${ANSI_YEL}(CAUTION: untested!)${ANSI_RST}"
